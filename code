@@ -15,7 +15,7 @@ reject(err) }
 })
 
 //定义一个方法，对获取到的数据的url进行拼接
-export default function param(data) {
+export function param(data) {
 //循环传进来的数据，就是上面通过异步取到的数据
 for (var k in data){
 //判断是否能存在
