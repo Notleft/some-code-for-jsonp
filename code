@@ -21,7 +21,7 @@ for (var k in data){
 //判断是否能存在
 let value = value[k] !== undefined ? value[k] : ''
 //拼接url
-url += '&' + k + '=' + encodeURIcomponent(value)
+url += `&${k} = ${encodeURIComponent(value)}`
 }
 //返回url
 return url ? url.substring(1) ? ''
