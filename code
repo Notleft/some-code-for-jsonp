@@ -1,19 +1,28 @@
 import originJsonp from 'jsonp'
 
 export default function jsonp(url,data,option) {
+
 url += (url.indexOf('?') < 0 ? '?' : '&') + param(data)
+//通过封装一个Promise函数来获取数据
 return new Promise((resolve, reject) => {
+//对获取到的数据运用引入的方法进行刷选
 originJsonp(url, option, (err,data) => {
+//通过判断是否存在错误信息，或者取不到数据
 if (!err) {
 resolve(data)
 } else {
 reject(err) }
 })
 
+//定义一个方法，对获取到的数据的url进行拼接
 export default function param(data) {
+//循环传进来的数据，就是上面通过异步取到的数据
 for (var k in data){
-let value = value[k] ? ''
+//判断是否能存在
+let value = value[k] !== undefined ? value[k] : ''
+//拼接url
 url += '&' + k + '=' + encodeURIcomponent(value)
 }
+//返回url
 return url ? url.substring(1) ? ''
 }
